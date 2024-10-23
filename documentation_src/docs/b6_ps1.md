@@ -34,7 +34,7 @@ We're asked to calculate the classical partition function $Z=\int \frac{d^3p}{(2
 
     We can then cube this to get the 3D partition function.
 
-???+ success "Answer"
+??? success "Answer"
 
     $Z_\mathrm{3D} = \left(\frac{2\pi}{\beta\omega}\right)^3$
 
@@ -56,11 +56,11 @@ Now we're asked to calculate the heat capacity from the classical partition func
     C = \frac{\partial U}{\partial T} = 3k_B
     $$
 
-???+ success "Answer"
+??? success "Answer"
 
     $C = 3k_B$
 
-!!! note "Note"
+??? note "Note"
 
     This means that, for a 3D system containing N oscillators, we have $C = 3R$, which is the Dulong-Petit law.
 
@@ -88,11 +88,11 @@ We're asked to now calculate the quantum partition function $Z = \sum_n e^{-\bet
     Z = \frac{e^{-\beta \hbar \omega / 2}}{1 - e^{-\beta \hbar \omega}} = \left(2\sinh(\beta \hbar \omega / 2)\right)^{-1}
     $$
 
-???+ success "Answer"
+??? success "Answer"
 
     $Z = \left(2\sinh(\beta \hbar \omega / 2)\right)^{-1}$
 
-!!! note "Note"
+??? note "Note"
 
     The internal energy, once we calculate it, looks reminiscent of Bose-Einstein statistics.
 
@@ -133,7 +133,7 @@ Next we're asked to find an expression for the heat capacity of the quantum harm
     To get the 3D case, we would need to cube the partition function, which would give us an extra factor of 3 in the heat capacity.
     Similarly, to generalize for $N$ oscillators, we'd end up raising the partition function to the power of $N$, which would give us an extra factor of $N$ in the heat capacity.
 
-???+ success "Answer"
+??? success "Answer"
 
     $$
     C = 3 N k_B (\beta \hbar \omega)^2 \frac{e^{\beta \hbar \omega}}{(e^{\beta \hbar \omega} - 1)^2}
@@ -143,7 +143,7 @@ Next we're asked to find an expression for the heat capacity of the quantum harm
 
 We're asked to state the assumptions of the Debye model.
 
-???+ success "Answer"
+??? success "Answer"
 
     Linear dispersion relation: $\omega = v_s k$
 
@@ -154,7 +154,7 @@ We're asked to state the assumptions of the Debye model.
 
     There's a maximum frequency, the Debye frequency $\omega_D$, which is the highest frequency that can be supported by the lattice, such that $N_\mathrm{modes} = 3N_\mathrm{atoms}$
 
-Now we're asked to calculate the heat capacity of the Debye model.
+Next we're asked to calculate the heat capacity of the Debye model.
 
 ??? abstract "Show working"
 
@@ -186,13 +186,13 @@ Now we're asked to calculate the heat capacity of the Debye model.
 
     1. Absolute energies don't matter, only energy differences, so don't worry about the zero-point energy term!
 
-???+ success "Answer"
+??? success "Answer"
 
     $$
     C = \frac{\partial E}{\partial T} = 3 \frac{1}{k_B T^2} \left(\frac{L}{2\pi}\right)^3 \int_0^{\omega_D} 4\pi \left(\frac{\omega}{v_s}\right)^2 (\hbar \omega)^2 \frac{e^{\beta \hbar \omega}}{(e^{\beta \hbar \omega} - 1)^2} d\omega
     $$
 
-Now we're asked to think about the high and low temperature limits of the heat capacity.
+Then we're asked to think about the high and low temperature limits of the heat capacity.
 
 ??? abstract "Show working"
 
@@ -209,7 +209,7 @@ Now we're asked to think about the high and low temperature limits of the heat c
 
     In the high temperature limit, we can Taylor expand some exponentials to get the law of Dulong-Petit.
 
-???+ success "Answer"
+??? success "Answer"
 
     The low temperature heat capacity is:
     $C = \frac{12}{5} N k_B \pi^4 \left(\frac{T}{\Theta_D}\right)^3$
@@ -219,17 +219,17 @@ Now we're asked to think about the high and low temperature limits of the heat c
 
 Finally, we're asked to interpret some data.
 
-| T(K) | $C_V$ (J/K/mol) | $\Theta_D$ (K) |
-| ---- | --------------- | -------------- |
-| 0.1  | 8.5e-7          | 132            |
-| 1    | 8.6e-4          | 131            |
-| 5    | 0.12            | 127            |
-| 8    | 0.59            | 119            |
-| 10   | 1.1             | 121            |
-| 15   | 2.8             | 132            |
-| 20   | 6.3             | 135            |
+??? success "Answer"
 
-???+ success "Answer"
+    | T(K) | $C_V$ (J/K/mol) | $\Theta_D$ (K) |
+    | ---- | --------------- | -------------- |
+    | 0.1  | 8.5e-7          | 132            |
+    | 1    | 8.6e-4          | 131            |
+    | 5    | 0.12            | 127            |
+    | 8    | 0.59            | 119            |
+    | 10   | 1.1             | 121            |
+    | 15   | 2.8             | 132            |
+    | 20   | 6.3             | 135            |
 
     The key thing to note is that you should only really take the first couple of data points seriously.
     Any higher than that and we'll start to excite higher energy modes, and the Debye model will start to break down.
