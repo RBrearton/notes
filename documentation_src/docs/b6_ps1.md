@@ -143,8 +143,93 @@ Next we're asked to find an expression for the heat capacity of the quantum harm
 
 We're asked to state the assumptions of the Debye model.
 
-??? abstract "Answer"
+???+ success "Answer"
 
-    1. Linear dispersion relation: $\omega = v_s k$
-    2. The speed of sound is the same in all directions (isotropy)
-    3. There's a maximum frequency, the Debye frequency $\omega_D$, which is the highest frequency that can be supported by the lattice, such that $N_\mathrm{modes} = 3N_\mathrm{atoms}$
+    Linear dispersion relation: $\omega = v_s k$
+
+    The speed of sound is the same in all directions (isotropy) (1)
+    { .annotate }
+
+    1. This is a simplification that is easy to relax when using a computer, but with pen and paper calculations, it's a useful assumption.
+
+    There's a maximum frequency, the Debye frequency $\omega_D$, which is the highest frequency that can be supported by the lattice, such that $N_\mathrm{modes} = 3N_\mathrm{atoms}$
+
+Now we're asked to calculate the heat capacity of the Debye model.
+
+??? abstract "Show working"
+
+    We can start by writing down the total internal energy of the system:(1)
+    { .annotate }
+
+    1. This is just the Einstein model's energy at a particular frequency, integrated over all frequencies, weighting the energy contributed by a particular frequency by the number of modes at that frequency.
+
+    $$
+    E = \int_0^{\omega_D}  g(\omega) \hbar\omega (n_B(\omega) + 1/2)d\omega
+    $$
+
+    Figuring out the density of states for a spherical shell in k-space, we get:
+
+    $$
+    E = 3 \left(\frac{L}{2\pi}\right)^3 \int_0^{k_D}  \hbar v_s k (n_B(\omega) + 1/2) d^3 k
+    $$
+
+    where we've used our assumption $\omega = v_s k$.
+    Now using spherical symmetry, converting to spherical coordinates, and integrating over the angular part, writing the Bose occupation factor out explicitly, and converting everything back to $\omega$, we get:
+
+    $$
+    E = 3 \left(\frac{L}{2\pi}\right)^3 \int_0^{\omega_D} 4\pi \left(\frac{\omega}{v_s}\right)^2 \hbar \omega \left(\frac{1}{e^{\beta \hbar \omega} - 1} + \frac{1}{2}\right) d\omega
+    $$
+
+    To get the heat capacity, we need to differentiate this with respect to temperature.
+    This gets rid of the nasty zero-point energy term, that otherwise would give us a divergence(1) in our internal energy.
+    { .annotate }
+
+    1. Absolute energies don't matter, only energy differences, so don't worry about the zero-point energy term!
+
+???+ success "Answer"
+
+    $$
+    C = \frac{\partial E}{\partial T} = 3 \frac{1}{k_B T^2} \left(\frac{L}{2\pi}\right)^3 \int_0^{\omega_D} 4\pi \left(\frac{\omega}{v_s}\right)^2 (\hbar \omega)^2 \frac{e^{\beta \hbar \omega}}{(e^{\beta \hbar \omega} - 1)^2} d\omega
+    $$
+
+Now we're asked to think about the high and low temperature limits of the heat capacity.
+
+??? abstract "Show working"
+
+    In the low temperature limit, our integrand falls off rapidly as a function of $\omega$.
+    This is because our temperature is too low to excite the higher energy modes.
+    This means we can approximate $\omega$ as being very large, in which case our integral has an exact solution once non-dimensionalized:
+
+    $$
+    C = 9 N k_B \left(\frac{T}{\Theta_D}\right)^3 \int_0^{\infty} \frac{x^4 e^x}{(e^x - 1)^2} dx
+    $$
+
+    where $\Theta_D = \hbar \omega_D / k_B$ is the Debye temperature.
+    We can then directly integrate this to get the low temperature heat capacity.
+
+    In the high temperature limit, we can Taylor expand some exponentials to get the law of Dulong-Petit.
+
+???+ success "Answer"
+
+    The low temperature heat capacity is:
+    $C = \frac{12}{5} N k_B \pi^4 \left(\frac{T}{\Theta_D}\right)^3$
+
+    The high temperature heat capacity is:
+    $C = 3 R$
+
+Finally, we're asked to interpret some data.
+
+| T(K) | $C_V$ (J/K/mol) | $\Theta_D$ (K) |
+| ---- | --------------- | -------------- |
+| 0.1  | 8.5e-7          | 132            |
+| 1    | 8.6e-4          | 131            |
+| 5    | 0.12            | 127            |
+| 8    | 0.59            | 119            |
+| 10   | 1.1             | 121            |
+| 15   | 2.8             | 132            |
+| 20   | 6.3             | 135            |
+
+???+ success "Answer"
+
+    The key thing to note is that you should only really take the first couple of data points seriously.
+    Any higher than that and we'll start to excite higher energy modes, and the Debye model will start to break down.
