@@ -1,0 +1,26 @@
+{
+  "cSpell.words": [
+    "accesskey",
+    "afterbegin",
+    "afterend",
+    "beforebegin",
+    "beforeend",
+    "Brearton",
+    "contenteditable",
+    "enterkeyhint",
+    "htmx",
+    "inputmode",
+    "pydantic",
+    "tabindex"
+  ],
+  "black-formatter.args": ["--line-length=80"],
+  "editor.rulers": [80],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "pylint.args": [
+    "--disable=logging-fstring-interpolation",
+    "--disable=no-member",
+    "--disable=invalid-name"
+  ]
+}
