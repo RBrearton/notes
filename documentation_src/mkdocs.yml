@@ -35,11 +35,11 @@ theme:
 # This sets up the structure of the website.
 nav:
   - Home: index.md
+  - B2:
+      - PS1: b2_ps1.md
   - B6:
       - PS1: b6_ps1.md
       - PS2: b6_ps2.md
-  - B2:
-      - PS1: b2_ps1.md
 
 # Some necessary extensions.
 markdown_extensions:
