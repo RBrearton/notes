@@ -16,6 +16,7 @@
     "javascripts",
     "linenums",
     "mathjax",
+    "mathrm",
     "mkdocs",
     "nicegui",
     "pydantic",
