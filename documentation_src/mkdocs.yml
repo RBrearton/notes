@@ -1,4 +1,4 @@
-site_name: dream
+site_name: Notes
 
 # Details about the theme used in the website.
 theme:
@@ -9,7 +9,7 @@ theme:
     # The dark theme.
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: cyan
+      primary: teal
       accent: lime
       toggle:
         icon: material/weather-sunny
@@ -18,7 +18,7 @@ theme:
     # The light theme.
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: cyan
+      primary: teal
       accent: lime
       toggle:
         icon: material/weather-night
@@ -61,5 +61,9 @@ markdown_extensions:
       generic: true
 
 extra_javascript:
-  - javascripts/mathjax.js
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css
