@@ -1,0 +1,7 @@
+*.pyc
+*.egg-info
+*.ipynb
+build
+dist
+.DS_Store
+TESTING*
