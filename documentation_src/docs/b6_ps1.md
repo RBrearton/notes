@@ -355,7 +355,12 @@ Then we're asked to plug in the numbers for Na. We're told the density is $1 \ma
 
     Now using $\rho = RA/L$, $V =I R$, we have that $V_H = I \rho L/A$.
 
-    The only lengthscale we're given is 5mm, so write $A = L^2$ and use $L = 5 \times 10^{-3} \mathrm{m}$.
+    Now the only tricky thing to think about is what to provide as the area, and what to provide as the length.
+    As we're looking at $\rho_{xy}$, the area is still the cross-sectional area of the wire, but the length $L$ is the cross-sectional length (as that's the direction over which we're measuring a voltage drop).
+
+    If you find this weird to think about, imagine how you expect the Hall voltage to scale as a function of area and length.
+    Holding everything but $L$ constant, which direction should $L$ be pointing in so that we get a linear increase in $V_H$ for a linear increase in $L$?
+    Similarly, holding everything but $A$ constant, which area should $A$ be pointing in so that we get a linear increase in $V_H$ for a linear decrease in $A$?
 
     Then we have enough numbers to get to the answer!
 
