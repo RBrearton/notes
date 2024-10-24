@@ -156,7 +156,10 @@ We're asked to state the assumptions of the Debye model.
 
     1. This is a simplification that is easy to relax when using a computer, but with pen and paper calculations, it's a useful assumption.
 
-    There's a maximum frequency, the Debye frequency $\omega_D$, which is the highest frequency that can be supported by the lattice, such that $N_\mathrm{modes} = 3N_\mathrm{atoms}$
+    There's a maximum frequency, the Debye frequency $\omega_D$, which is the highest frequency that can be supported by the lattice, such that $N_\mathrm{modes} = 3N_\mathrm{atoms}$(1)
+    { .annotate }
+
+    1. We'll learn more about band structure shortly. The idea is that the dispersion relation isn't really linear except for small $k$. The Debye model is a good approximation for small $k$, but as it breaks down for large $k$, we need this fudge to make the theory agree with the law of Dulong and Petit.
 
 Next we're asked to calculate the heat capacity of the Debye model.
 
