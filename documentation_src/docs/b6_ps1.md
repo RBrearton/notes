@@ -6,7 +6,7 @@ We're asked to consider a single simple harmonic oscillator, given by $H = \frac
 
 We're asked to calculate the classical partition function $Z=\int \frac{d^3p}{(2\pi\hbar)^3} \int d^3x e^{-\beta H(\vec{p}, \vec{x})}$
 
-??? abstract "Show working"
+???+ abstract "Show working"
 
     It's easy however you tackle it, but I decided to solve the 1D partition function, then cube it.
     It's instructive to note that, since we're just looking at heat capacities, we can ignore the prefactor of $\frac{1}{2\pi\hbar}$ in the momentum integral.
@@ -34,7 +34,7 @@ We're asked to calculate the classical partition function $Z=\int \frac{d^3p}{(2
 
     We can then cube this to get the 3D partition function.
 
-??? success "Answer"
+???+ success "Answer"
 
     $Z_\mathrm{3D} = \left(\frac{2\pi}{\beta\omega}\right)^3$
 
@@ -46,7 +46,7 @@ We're asked to calculate the classical partition function $Z=\int \frac{d^3p}{(2
 
 Now we're asked to calculate the heat capacity from the classical partition function that we just calculated.
 
-??? abstract "Show working"
+???+ abstract "Show working"
 
     Another easy calculation. Start by calculating the internal energy $U$:
 
@@ -60,11 +60,11 @@ Now we're asked to calculate the heat capacity from the classical partition func
     C = \frac{\partial U}{\partial T} = 3k_B
     $$
 
-??? success "Answer"
+???+ success "Answer"
 
     $C = 3k_B$
 
-??? note "Note"
+???+ note "Note"
 
     This means that, for a 3D system containing N oscillators, we have $C = 3R$, which is the Dulong-Petit law.
 
@@ -72,7 +72,7 @@ Now we're asked to calculate the heat capacity from the classical partition func
 
 We're asked to now calculate the quantum partition function $Z = \sum_n e^{-\beta E_n}$
 
-??? abstract "Show working"
+???+ abstract "Show working"
 
     We can use the fact that the energy levels are $E_n = \hbar \omega (n + 1/2)$, so we have:
 
@@ -92,11 +92,11 @@ We're asked to now calculate the quantum partition function $Z = \sum_n e^{-\bet
     Z = \frac{e^{-\beta \hbar \omega / 2}}{1 - e^{-\beta \hbar \omega}} = \left(2\sinh(\beta \hbar \omega / 2)\right)^{-1}
     $$
 
-??? success "Answer"
+???+ success "Answer"
 
     $Z = \left(2\sinh(\beta \hbar \omega / 2)\right)^{-1}$
 
-??? note "Note"
+???+ note "Note"
 
     The internal energy, once we calculate it, looks reminiscent of Bose-Einstein statistics.
 
@@ -113,7 +113,7 @@ We're asked to now calculate the quantum partition function $Z = \sum_n e^{-\bet
 
 Next we're asked to find an expression for the heat capacity of the quantum harmonic oscillator.
 
-??? abstract "Show working"
+???+ abstract "Show working"
 
     We can start by calculating the internal energy, as we did above:
 
@@ -137,7 +137,7 @@ Next we're asked to find an expression for the heat capacity of the quantum harm
     To get the 3D case, we would need to cube the partition function, which would give us an extra factor of 3 in the heat capacity.
     Similarly, to generalize for $N$ oscillators, we'd end up raising the partition function to the power of $N$, which would give us an extra factor of $N$ in the heat capacity.
 
-??? success "Answer"
+???+ success "Answer"
 
     $$
     C = 3 N k_B (\beta \hbar \omega)^2 \frac{e^{\beta \hbar \omega}}{(e^{\beta \hbar \omega} - 1)^2}
@@ -147,7 +147,7 @@ Next we're asked to find an expression for the heat capacity of the quantum harm
 
 We're asked to state the assumptions of the Debye model.
 
-??? success "Answer"
+???+ success "Answer"
 
     Linear dispersion relation: $\omega = v_s k$
 
@@ -163,7 +163,7 @@ We're asked to state the assumptions of the Debye model.
 
 Next we're asked to calculate the heat capacity of the Debye model.
 
-??? abstract "Show working"
+???+ abstract "Show working"
 
     We can start by writing down the total internal energy of the system:(1)
     { .annotate }
@@ -193,7 +193,7 @@ Next we're asked to calculate the heat capacity of the Debye model.
 
     1. Absolute energies don't matter, only energy differences, so don't worry about the zero-point energy term!
 
-??? success "Answer"
+???+ success "Answer"
 
     $$
     C = \frac{\partial E}{\partial T} = 3 \frac{1}{k_B T^2} \left(\frac{L}{2\pi}\right)^3 \int_0^{\omega_D} 4\pi \left(\frac{\omega}{v_s}\right)^2 (\hbar \omega)^2 \frac{e^{\beta \hbar \omega}}{(e^{\beta \hbar \omega} - 1)^2} d\omega
@@ -201,7 +201,7 @@ Next we're asked to calculate the heat capacity of the Debye model.
 
 Then we're asked to think about the high and low temperature limits of the heat capacity.
 
-??? abstract "Show working"
+???+ abstract "Show working"
 
     In the low temperature limit, our integrand falls off rapidly as a function of $\omega$.
     This is because our temperature is too low to excite the higher energy modes.
@@ -216,7 +216,7 @@ Then we're asked to think about the high and low temperature limits of the heat 
 
     In the high temperature limit, we can Taylor expand some exponentials to get the law of Dulong-Petit.
 
-??? success "Answer"
+???+ success "Answer"
 
     The low temperature heat capacity is:
     $C = \frac{12}{5} N k_B \pi^4 \left(\frac{T}{\Theta_D}\right)^3$
@@ -226,7 +226,7 @@ Then we're asked to think about the high and low temperature limits of the heat 
 
 Finally, we're asked to interpret some data.
 
-??? success "Answer"
+???+ success "Answer"
 
     | T(K) | $C_V$ (J/K/mol) | $\Theta_D$ (K) |
     | ---- | --------------- | -------------- |
@@ -241,6 +241,8 @@ Finally, we're asked to interpret some data.
     The key thing to note is that you should only really take the first couple of data points seriously.
     Any higher than that and we'll start to excite higher energy modes, and the Debye model will start to break down.
 
+    Also, note that, since the heat capacity is given per mole, we need to set $N = N_A$.
+
 ## Q3: Drude theory
 
 We're first asked to derive the conductivity in the presence of an electric field.
@@ -253,7 +255,7 @@ We're first asked to derive the conductivity in the presence of an electric fiel
 
     As you might expect, it is correct about as often as it's incorrect.
 
-??? abstract "Show working"
+???+ abstract "Show working"
 
     Start by Taylor expanding the momentum at a time $t + dt$, assuming that there's a probability of scattering $1/\tau$.
 
@@ -288,13 +290,13 @@ We're first asked to derive the conductivity in the presence of an electric fiel
 
     This is the Drude model's conductivity, as the conductivity is defined as $\vec{J} = \sigma \vec{E}$.
 
-??? success "Answer"
+???+ success "Answer"
 
     $\sigma = \frac{ne^2\tau}{m}$
 
 Then we're asked to find the resistivity matrix in the presence of electric and magnetic fields.
 
-??? abstract "Show working"
+???+ abstract "Show working"
 
     We can start by writing down the equation of motion for the electron in the presence of both fields:
 
@@ -317,7 +319,7 @@ Then we're asked to find the resistivity matrix in the presence of electric and 
 
     Now using the definition of the resistivity as $\vec{E} = \rho \vec{J}$, we find that it's a matrix.
 
-??? success "Answer"
+???+ success "Answer"
 
     $$
     \rho_{xx} = \rho_{yy} = \rho_{zz} = \frac{m}{ne^2\tau}
@@ -334,7 +336,7 @@ Then we're asked to find the resistivity matrix in the presence of electric and 
 Now we're tasked to find the conductivity matrix, which we can do by just inverting the resistivity matrix.
 It's block diagonal, so it's easy, if algebraic.
 
-??? success "Answer"
+???+ success "Answer"
 
     TODO: type this.
 
@@ -342,7 +344,7 @@ Now we're asked to define the Hall resistivity, which is the positive off-diagon
 
 Then we're asked to plug in the numbers for Na. We're told the density is $1 \mathrm{g}/\mathrm{cm}^3$, atomic mass $M = 23u$.
 
-??? abstract "Show working"
+???+ abstract "Show working"
 
     Start by getting the density of atoms in SI, which is.
 
@@ -367,7 +369,7 @@ Then we're asked to plug in the numbers for Na. We're told the density is $1 \ma
 
     Then we have enough numbers to get to the answer!
 
-??? success "Answer"
+???+ success "Answer"
 
     $V_H = 4.8 \times 10^{-8} \mathrm{V}$
 
@@ -389,7 +391,7 @@ Then we're asked to plug in the numbers for Na. We're told the density is $1 \ma
 
 We're also asked to comment on the properties of metals that Drude theory doesn't explain well.
 
-??? success "Answer"
+???+ success "Answer"
 
     The answer to this is pretty much everything.
     It's a qualitative theory.
