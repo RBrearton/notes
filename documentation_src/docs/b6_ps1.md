@@ -38,6 +38,10 @@ We're asked to calculate the classical partition function $Z=\int \frac{d^3p}{(2
 
     $Z_\mathrm{3D} = \left(\frac{2\pi}{\beta\omega}\right)^3$
 
+    Or, if we would've kept the prefactor in the momentum integral:
+
+    $Z_\mathrm{3D} = \left(\frac{1}{\beta\hbar\omega}\right)^{3}$
+
 ### Heat capacity from the classical partition function
 
 Now we're asked to calculate the heat capacity from the classical partition function that we just calculated.
