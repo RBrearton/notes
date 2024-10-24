@@ -44,7 +44,8 @@
   "pylint.args": [
     "--disable=logging-fstring-interpolation",
     "--disable=no-member",
-    "--disable=invalid-name"
+    "--disable=invalid-name",
+    "--disable=expression-not-assigned"
   ],
   "yaml.schemas": {
     "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
