@@ -237,3 +237,152 @@ Finally, we're asked to interpret some data.
 
     The key thing to note is that you should only really take the first couple of data points seriously.
     Any higher than that and we'll start to excite higher energy modes, and the Debye model will start to break down.
+
+## Q3: Drude theory
+
+We're first asked to derive the conductivity in the presence of an electric field.
+
+!!! note "On Drude theory"
+
+    Drude theory is little more than dimensional analysis.
+    We're applying crude classical logic to try to solve a highly nontrivial quantum mechanical problem.
+    There's absolutely no reason why this should work other than by dimensional analysis, so don't take any of the steps too seriously.
+
+    As you might expect, it is correct about as often as it's incorrect.
+
+??? abstract "Show working"
+
+    Start by Taylor expanding the momentum at a time $t + dt$, assuming that there's a probability of scattering $1/\tau$.
+
+    $$
+    p(t + dt) = p(t) + dt \frac{dp}{dt} = p(t)\left( 1 - \frac{dt}{\tau} \right) + 0 \times (dt/\tau) + F dt/\tau
+    $$
+
+    Where we're assuming that, on average, the electrons scatter to zero momentum.
+    Rearranging gives us:
+
+    $$
+    \frac{d\vec{p}}{dt} = -\frac{\vec{p}}{\tau} + \vec{F}
+    $$
+
+    Now using $\vec{F} = -e\vec{E}$ (ignoring $\vec{B}$ for now), we get:
+
+    $$
+    \frac{d\vec{p}}{dt} = -\frac{\vec{p}}{\tau} - e\vec{E}
+    $$
+
+    In the steady state, we have $\frac{d\vec{p}}{dt} = 0$, giving:
+
+    $$
+    \vec{p} = -\tau e \vec{E}
+    $$
+
+    Now write $\vec{p} = m\vec{v}$, and use the definition of current density $\vec{J} = -ne\vec{v}$, to get:
+
+    $$
+    \vec{J} = \frac{ne^2\tau}{m} \vec{E}
+    $$
+
+    This is the Drude model's conductivity, as the conductivity is defined as $\vec{J} = \sigma \vec{E}$.
+
+??? success "Answer"
+
+    $\sigma = \frac{ne^2\tau}{m}$
+
+Then we're asked to find the resistivity matrix in the presence of electric and magnetic fields.
+
+??? abstract "Show working"
+
+    We can start by writing down the equation of motion for the electron in the presence of both fields:
+
+    $$
+    m\frac{d\vec{v}}{dt} = -e\vec{E} - e\vec{v} \times \vec{B} - \frac{m\vec{v}}{\tau}
+    $$
+
+    Once again, in the steady state, we have $\frac{d\vec{v}}{dt} = 0$, giving:
+
+    $$
+    \vec{v} = -\frac{e\tau}{m} \left(\vec{E} + \vec{v} \times \vec{B}\right)
+    $$
+
+    Now we just want to turn all of our $\vec{v}$s into $\vec{J}$s.
+    We can do this by using the definition of current density $\vec{J} = -ne\vec{v}$.
+
+    $$
+    \vec{E} = \frac{1}{ne} \vec{J}\times\vec{B} + \frac{m}{ne^2\tau} \vec{J}
+    $$
+
+    Now using the definition of the resistivity as $\vec{E} = \rho \vec{J}$, we find that it's a matrix.
+
+??? success "Answer"
+
+    $$
+    \rho_{xx} = \rho_{yy} = \rho_{zz} = \frac{m}{ne^2\tau}
+    $$
+
+    $$
+    \rho_{xy} = -\rho_{yx} = \frac{B}{ne}
+    $$
+
+    $$
+    \rho = \begin{pmatrix} \rho_{xx} & \rho_{xy} & 0 \\ \rho_{yx} & \rho_{yy} & 0 \\ 0 & 0 & \rho_{zz} \end{pmatrix}
+    $$
+
+Now we're tasked to find the conductivity matrix, which we can do by just inverting the resistivity matrix.
+It's block diagonal, so it's easy, if algebraic.
+
+??? success "Answer"
+
+    TODO: type this.
+
+Now we're asked to define the Hall resistivity, which is the positive off-diagonal element $R_H = \rho_{yx}/B = -1/ne$.
+
+Then we're asked to plug in the numbers for Na. We're told the density is $1 \mathrm{g}/\mathrm{cm}^3$, atomic mass $M = 23u$.
+
+??? abstract "Show working"
+
+    Start by getting the density of atoms in SI, which is.
+
+    $$
+    \left(\frac{1\mathrm{g}}{\mathrm{cm}^3}\right)
+    \left( 10 \frac{\mathrm{cm}} {\mathrm{m}^3} \right)
+    \left( \frac{1 \mathrm{mol}}{23 \mathrm{g}} \right)
+    \left( 6.02 \times 10^{23} \frac{\mathrm{atoms}}{\mathrm{mol}} \right)
+    = 2.6 \times 10^{28} \mathrm{m}^{-3}
+    $$
+
+    As the valence is 1, this is the electron density.
+
+    Now using $\rho = RA/L$, $V =I R$, we have that $V_H = I \rho L/A$.
+
+    The only lengthscale we're given is 5mm, so write $A = L^2$ and use $L = 5 \times 10^{-3} \mathrm{m}$.
+
+    Then we have enough numbers to get to the answer!
+
+??? success "Answer"
+
+    $V_H = 4.8 \times 10^{-8} \mathrm{V}$
+
+!!! note "Note on Hall measurements"
+
+    This Voltage is very small.
+    Any errors in your experimental setup will lead to measurements that look like:
+
+    $$
+    V_\mathrm{meas}(B) = V_H (B) + V_\mathrm{error}
+    $$
+
+    Crucially, $V_H$ is a function of magnetic field, so the trick is to measure $V_H$ at both positive and negative magnetic fields.
+    You want to measure:
+
+    $$
+    V_H = \left[V_\mathrm{meas}(B) - V_\mathrm{meas}(-B)\right]/2
+    $$
+
+We're also asked to comment on the properties of metals that Drude theory doesn't explain well.
+
+??? success "Answer"
+
+    The answer to this is pretty much everything.
+    It's a qualitative theory.
+    It rather famously often gets the wrong sign for the Peltier and Seebeck coefficients (this is examinable), but it's pretty terrible for everything else, too.
