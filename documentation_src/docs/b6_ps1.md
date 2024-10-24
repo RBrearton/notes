@@ -396,3 +396,28 @@ We're also asked to comment on the properties of metals that Drude theory doesn'
     The answer to this is pretty much everything.
     It's a qualitative theory.
     It rather famously often gets the wrong sign for the Peltier and Seebeck coefficients (this is examinable), but it's pretty terrible for everything else, too.
+
+## Q4: Sommerfeld model
+
+This question starts with some definitions.
+
+!!! quote "Definitions"
+
+    The ***Fermi energy*** is the chemical potential at zero temperature.
+
+    The ***Fermi temperature*** is $T_F = \frac{E_F}{k_B}$.
+
+    The ***Fermi surface*** is the surface in $k$-space where the energy is equal to the Fermi energy. (1)
+    { .annotate }
+
+    1. Some other definitions are possible. It's also *the locus of points in $k$-space with $\vec{k} = \vec{k}_F$.*, or *the surface in $k$-space separating filled and empty states*; many other equivalent definitions are possible.
+
+TODO: finish notes here.
+
+!!! note "Notes on this question"
+
+    The number you're after $E_F = 3.2 \mathrm{eV}$ in the calculation.
+
+## Q5: Velocities in the free electron model
+
+## Q6: Physical properties of the free electron gas
