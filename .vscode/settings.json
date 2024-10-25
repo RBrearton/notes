@@ -32,6 +32,7 @@
     "pydantic",
     "pygments",
     "pymdownx",
+    "rbrearton",
     "Sommerfeld",
     "superfences",
     "tabindex"
@@ -39,7 +40,7 @@
   "black-formatter.args": ["--line-length=80"],
   "editor.rulers": [80],
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter"
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "pylint.args": [
     "--disable=logging-fstring-interpolation",
