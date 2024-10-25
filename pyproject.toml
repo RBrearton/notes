@@ -144,3 +144,11 @@ package-dir = { "" = "src" }
 
 [tool.setuptools.dynamic]
 version = { attr = "notes.__version__" }
+
+[tool.ruff]
+line-length = 80
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["PLR0913", "SIM117"] #["D205", "D212"]
+# unfixable = ["ALL"]
