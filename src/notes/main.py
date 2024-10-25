@@ -1,6 +1,4 @@
-"""
-This script is the entrypoint for the notes website.
-"""
+"""The entrypoint of the main notes website."""
 
 from nicegui import ui
 
@@ -8,12 +6,9 @@ title = "Notes"
 
 
 @ui.page("/", favicon="")
-def main_page():
-    """
-    This function defines the content of the main landing page of the notes
-    website.
-    """
-    ui.colors(primary="teal")
+def main_page() -> None:
+    """Define the content of the main landing page of the notes website."""
+    ui.colors(primary="teal", secondary="orange")
     ui.page_title(title)
 
     ui.markdown(f"# {title}")
@@ -22,7 +17,7 @@ def main_page():
         I'm going to try to put some teaching notes for the B2 and B6 courses
         here.
         I'll update this throughout term.
-        """
+        """,
     )
 
     # The right drawer.
@@ -38,33 +33,35 @@ def main_page():
         # These go on the left.
         with ui.row().classes("items-center"):
             ui.icon("description", size="md")
-            ui.label("Notes").classes("text-2xl font-bold")
+            ui.label("Notes").classes("text-2xl")
 
         # These go on the right.
         with ui.row().classes("items-center"):
             ui.input(placeholder="Search...").props(
-                'input-style="color: white"'
+                'input-style="color: white"',
             )
             ui.button(icon="menu").props("flat color=white")
 
     # The left drawer.
     with ui.left_drawer(fixed=False):
         ui.markdown(f"##### {title}")
-        with ui.column(align_items="stretch").style("gap: 0"):
+        # The contents.
+        with ui.column(align_items="stretch").style("gap: 0; padding: 0"):
+            # Relativity dropdown.
             with (
                 ui.expansion("B2: Symmetry and relativity")
-                .props("dense dense-toggle")
+                .props("dense items-start")
                 .classes("non-selectable")
-            ):
-                with ui.column().style("gap: 0"):
+            ).style("gap: 0; padding: 0"):
+                with ui.column().style("gap: 0; padding: 0"):
                     ui.label("PS1")
                     ui.label("PS2")
 
             with (
                 ui.expansion("B6: Condensed matter physics")
-                .props("dense dense-toggle")
+                .props("dense")
                 .classes("non-selectable")
-            ).style("gap: 0"):
+            ):
                 ui.label("PS1")
                 ui.label("PS2")
 
@@ -74,15 +71,16 @@ def main_page():
         ui.label(
             "Spot any mistakes? Go to the",
         )
-        ui.link(
-            "github issues page", target="github.com/rbrearton/notes/issues"
-        ).classes("text-white"),
+        (
+            ui.link(
+                "github issues page",
+                target="github.com/rbrearton/notes/issues",
+            ).classes("text-white"),
+        )
 
 
-def main():
-    """
-    Running this function spins up the website.
-    """
+def main() -> None:
+    """Run to spin up the website."""
 
 
 ui.run(favicon="icon.png")
